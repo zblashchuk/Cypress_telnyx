@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 /// <reference types="cypress-xpath" />
 import "cypress-real-events/support";
-const { generateUser } = require("e:/Zoryana/Cypress/cypress/support/generate.js");
+const { generateUser } = require("/home/runner/work/Cypress_telnyx/Cypress_telnyx/cypress/support/generate.js");
 
 describe ('Window', () => {
   beforeEach(() => {
