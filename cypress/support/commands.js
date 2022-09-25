@@ -24,7 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 /// <reference types="cypress-xpath" />
-const { generateUser } = require("e:/Zoryana/Cypress/cypress/support/generate.js");
+const { generateUser } = require("/home/runner/work/Cypress_telnyx/Cypress_telnyx/cypress/support/generate.js");
 Cypress.Commands.add('getMainMemuElement', (MainMemuElement) => {
   cy.xpath(`// header // div // ul // li [contains(.,"${MainMemuElement}")]`);
 });
