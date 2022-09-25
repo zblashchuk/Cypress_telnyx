@@ -7,11 +7,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          browser: chrome
+          headed: true
 
       - name: Cypress run
         uses: cypress-io/github-action@v4
-        #with:
-          #spec: cypress/integration/spec1.js
+        # with:
+          # spec: cypress/integration/spec1.js
          # project: ./some/nested/folder
 
         with:
