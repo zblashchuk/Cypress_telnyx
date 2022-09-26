@@ -116,7 +116,7 @@ Cypress.Commands.add('dropdownCountryPricing', (country) => {
 Cypress.Commands.add('talkToExpert', () => {
   const {firstName, lastName, email, randReasonForContact} = generateUser();
         
-  cy.get('#Reason_for_Contact__c')
+  cy.get('div > #Reason_for_Contact__c')
     .select(randReasonForContact)
       
   cy.get('#FirstName')
