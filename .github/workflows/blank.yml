@@ -9,7 +9,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           browser: chrome
-          headed: true
+          headed: false
 
       - name: Cypress run
         uses: cypress-io/github-action@v4
