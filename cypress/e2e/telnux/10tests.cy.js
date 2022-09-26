@@ -13,24 +13,32 @@ describe ('Window', () => {
             cy.contains('Accept and close').click()
           } })
         });
+  
+  it('1 Check API Pricing for Germany', () => {
+  const country = 'Germany'
+  cy.getMainMemuElement('Pricing').realHover().wait(500)
+  cy.getDropdownMenuItem('See all Pricing').wait(500).click({force: true})
+  .getPricing('Voice API').click()
+  .dropdownCountryPricing(country).should('contain', country)
+ });
 
-it('1check that user should get sign up page by click on sign up button', () => {
+it('2check that user should get sign up page by click on sign up button', () => {
     cy.getMainMemuElement('Sign up').click()
     cy.url().should('include', '/sign-up')
   })
 
-  it('2check that user should register by by valid data', () => {
+  it('3check that user should register by by valid data', () => {
     cy.getMainMemuElement('Sign up').click()
   cy.signUp_VerifyEmail()
 })
 
-it('3check that user should not login with data which was not used for register before', () => {
+it('4check that user should not login with data which was not used for register before', () => {
   cy.getTopMemuElement('Log In')
   cy.signIn()
 
 })
 
-it('4use requests to navigation bar links for Company item in Menu', () => {
+it('5use requests to navigation bar links for Company item in Menu', () => {
   const pages = ['About Telnyx', 'Careers', 'Partners', 'Integrations']
   cy.getMainMemuElement('Company').realHover()
    pages.forEach(page => {
@@ -42,7 +50,7 @@ it('4use requests to navigation bar links for Company item in Menu', () => {
 });
 })
 
-it('5dropdown menu is visible when move to items main menu', () => {
+it('6dropdown menu is visible when move to items main menu', () => {
   const pages = ['Products', 'Solutions', 'Resources', 'Company', 'Pricing']
   pages.forEach(page => {
      cy.getMainMemuElement(page)
@@ -53,18 +61,10 @@ it('5dropdown menu is visible when move to items main menu', () => {
       })
     });
 
-it('6dropdown menu is visible when move to items main menu', () => {
+it('7dropdown menu is visible when move to items main menu', () => {
   cy.getTopMemuElement('Support')
   cy.checkSearchField('SMS')
     });
-
-it('7 Check API Pricing for Germany', () => {
-  const country = 'Germany'
-  cy.getMainMemuElement('Pricing').realHover().wait(500)
-  cy.getDropdownMenuItem('See all Pricing').wait(500).click({force: true})
-  .getPricing('Voice API').click()
-  .dropdownCountryPricing(country).should('contain', country)
- });
 
 it('8 Talk to an expert', () => {
   cy.getMainMemuElement('Talk to an expert')
